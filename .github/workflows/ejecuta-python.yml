@@ -1,5 +1,5 @@
 name: Prueba Ejecucion de script de python
-run name: Script de python en UnUntu 
+run-name: Script de python en UnUntu 
 on: [push]
 jobs: 
   ejecuta-python:
