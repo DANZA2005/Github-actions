@@ -1,5 +1,5 @@
 name: Tipos de lanzadores de acciones
-run name: Lanzadores de acciones
+run-name: Lanzadores de acciones
 on: 
   push:
     branches: 
@@ -9,7 +9,7 @@ on:
     types: [opened, edited, closed]
 
   schedule: 
-    -cron: '20 * * * *'
+    - cron: '20 * * * *'
 
   workflow_dispatch:
     inputs:
@@ -41,4 +41,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Lanzado por un trigger manual"
-      - run: echo "Alerta personalizada: ${{ github.event.inputs.alerta }}"
