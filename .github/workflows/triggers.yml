@@ -1,0 +1,44 @@
+name: Tipos de lanzadores de acciones
+run name: Lanzadores de acciones
+on: 
+  push:
+    branches: 
+      - main
+    
+  issues: 
+    types: [opened, edited, closed]
+
+  schedule: 
+    -cron: '20 * * * *'
+
+  workflow_dispatch:
+    inputs:
+      alerta:
+        description: "Alerta personalizada"
+        required: true
+        default: "Ola, trigger manual como estas uwu"
+        type: choice
+        options:
+          - bien
+          - mal
+          - queti 👉👈
+
+jobs:
+  ejecutando-push:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Lanzado por push a main"
+      - run: echo "Que onda profeee 👅👅👅👅👅"
+  ejecutando-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Un Nuevo issue ha sido abierto, editado o cerrado"
+  ejecutando-schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Lanzado por un cron programado"
+  ejecutando-workflow-dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Lanzado por un trigger manual"
+      - run: echo "Alerta personalizada: ${{ github.event.inputs.alerta }}"
