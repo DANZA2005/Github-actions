@@ -1,5 +1,5 @@
 name: variales
-runs-name: ${{ github.actor }} esta testeando las variables de github actions
+run-name: ${{ github.actor }} esta testeando las variables de github actions
 on:
     [push, workflow_dispatch]
 env:
@@ -18,8 +18,8 @@ jobs:
       run: echo "El puerto es $PORT"
       env:
         First_Name: Daniel
-    - run: echo "Mi nombre es ${{env.First_Name}}"
+    - run: echo "Mi nombre es ${{vars.First_Name}}"
     - name: Leyendo variable del repositorio
-      run: echo "El nombre del repositorio es ${{var.NOMBRE}}"
+      run: echo "El nombre del repositorio es ${{vars.NOMBRE}}"
 
 
