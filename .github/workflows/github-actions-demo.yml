@@ -11,4 +11,11 @@ jobs:
       - run: cat file.txt
       - run: rm -rf file.txt
       - run: ls -al
+      - name: Checkout enviroment
+        uses: actions/checkout@v6
+      - name: Definiendo variable
+        run: echo "USERNAME= ${{ github.actor }}" >> $GITHUB_ENV
+      - run: echo $PATH
+      - name: Ejecutando script
+        run: python app.py
 
