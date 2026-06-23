@@ -1,0 +1,25 @@
+name: variales
+runs-name: ${{ github.actor }} esta testeando las variables de github actions
+on:
+    [push, workflow_dispatch]
+env:
+    DAY_OF_WEEK: Lunes 34
+    MONTH: Febrero
+
+jobs:
+  variables:
+    runs-on: ubuntu-latest
+    env:
+      PORT: 8080
+    steps:
+    - name: Mostrar Fecha
+      run: echo "Hoy es $DAY_OF_WEEK y estamos en el mes de $MONTH"
+    - name: Mostrar Puerto
+      run: echo "El puerto es $PORT"
+      env:
+        First_Name: Daniel
+    - run: echo "Mi nombre es ${{env.First_Name}}"
+    - name: Leyendo variable del repositorio
+      run: echo "El nombre del repositorio es ${{var.NOMBRE}}"
+
+
